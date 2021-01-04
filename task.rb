@@ -32,7 +32,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-    sports=sports.compact!
+    sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -44,16 +44,14 @@ def q5
   # 以下に回答を記載  p true   if array1.size == 0
  p array1.empty?
  p array2.empty?
- p true   if array1.size == 0
- p false if array2.size >= 1
-
+ 
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 = numbers1.map! {|x| x * 10}
+  numbers2 = numbers1.map {|num| num * 10}
 
   puts numbers2
 
@@ -63,7 +61,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array = array.map(&:to_i)
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -72,7 +70,7 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-programming_languages = programming_languages.map(&:upcase)
+programming_languages.map!(&:upcase)
 upper_case_programming_languages = programming_languages.map(&:capitalize)
 # 以下は変更しないで下さい
   p programming_languages
@@ -83,8 +81,9 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
-end
+  names.each.with_index(1) do |name,i|
+  puts "会員No.#{i} #{name}さん"
+  end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
