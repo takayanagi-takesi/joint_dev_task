@@ -84,13 +84,21 @@ def q9
   names.each.with_index(1) do |name,i|
   puts "会員No.#{i} #{name}さん"
   end
+end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-
+  foods.each do |food|
+if foods.include?("うに") 
+  puts "#{food}" << "好物です"
+else
+  puts "#{food}" << "まあまあ好きです"
 end
+end
+end
+
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
