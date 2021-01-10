@@ -90,12 +90,12 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.each do |food|
-if food.include?("うに") 
-  puts "#{food}" << "好物です"
-else
-  puts "#{food}" << "まあまあ好きです"
-end
+foods.each do |food|
+  if food.include?("うに") 
+    puts "#{food}" << "好物です"
+  else
+    puts "#{food}" << "まあまあ好きです"
+  end
 end
 end
 
@@ -108,8 +108,7 @@ def q11
   sports.flatten!.uniq!
   sports.each.with_index(1) do |sport,i|
     
-    text = "No.#{i} #{sport}\n"
-    puts text
+  puts "No.#{i} #{sport}"
   end
 end
 
@@ -117,7 +116,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data[:user] [:name]
 end
 
 def q13
@@ -125,14 +124,16 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  user_data.merge!(update_data)
+  puts user_data
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  key_data = data.keys
+  puts key_data
 end
 
 def q15
@@ -140,7 +141,7 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  
 end
 
 def q16
