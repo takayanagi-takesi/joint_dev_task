@@ -167,13 +167,13 @@ class UserQ17
     @age = age
     @gender = gender
   end
-  user = UserQ17.new
-
-puts <<~TEXT
-名前：#{userQ17.name}
-年齢：#{brave.hp}
-性別：#{brave.offense}
-TEXT
+  def info(name, age, gender)
+  puts <<~TEXT
+    名前：#{@name}
+    年齢：#{@age}
+    性別：#{@gender}
+  TEXT
+  end
 end
 
 def q17
