@@ -190,8 +190,19 @@ end
 
 class UserQ18
   # 以下に回答を記載
+attr_accessor :name, :age
+def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
 
+def introduce(user1, user2)
+  if @age >= 20
+    "こんにちは，#{user1.name}と申します。宜しくお願いいたします。"
+  else
+    "はいさいまいど〜，#{user2.name}です！！！"
 end
+
 
 def q18
   # ここは変更しないで下さい
