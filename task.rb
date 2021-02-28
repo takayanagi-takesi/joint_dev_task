@@ -202,7 +202,8 @@ def introduce(user1, user2)
   else
     "はいさいまいど〜，#{user2.name}です！！！"
 end
-
+end
+end
 
 def q18
   # ここは変更しないで下さい
