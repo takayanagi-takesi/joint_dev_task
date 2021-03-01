@@ -187,7 +187,7 @@ def q17
 end
 
 
-
+require 'pry-byebug'
 class UserQ18
   # 以下に回答を記載
 attr_accessor :name, :age
@@ -196,11 +196,11 @@ def initialize(**params)
     @age = params[:age]
   end
 
-def introduce(user1, user2)
+def introduce
   if @age >= 20
-    "こんにちは，#{user1.name}と申します。宜しくお願いいたします。"
+    "こんにちは，#{@name}と申します。宜しくお願いいたします。"
   else
-    "はいさいまいど〜，#{user2.name}です！！！"
+    "はいさいまいど〜，#{@name}です！！！"
 end
 end
 end
@@ -216,16 +216,19 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+def initialize(name)
     @name = name
   end
+ def name
+  puts (@name)
+ end
+
 end
 
 def q19
   # ここは変更しないで下さい
   book = Item.new(name: "ゼロ秒思考")
-  puts book.name
+  book.name
 end
 
 class UserQ20
