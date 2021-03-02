@@ -190,19 +190,18 @@ end
 require 'pry-byebug'
 class UserQ18
   # 以下に回答を記載
-attr_accessor :name, :age
-def initialize(**params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
 
-def introduce
-  if @age >= 20
-    "こんにちは，#{@name}と申します。宜しくお願いいたします。"
-  else
+  def introduce
+    if @age >= 20
+      "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    else
     "はいさいまいど〜，#{@name}です！！！"
-end
-end
+    end
+  end
 end
 
 def q18
@@ -216,12 +215,13 @@ end
 
 class Item
   # 以下を修正して下さい
-def initialize(name)
+
+  def initialize(name: "ゼロ秒思考")
     @name = name
   end
- def name
-  puts (@name)
- end
+  def name
+     puts @name
+  end
 
 end
 
