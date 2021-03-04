@@ -233,11 +233,25 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
+  
+  entry_fee = case entry_fee
+  when 0..5
+  when 6..12
+  when 13..64
+  when 65..120
+  end
+entry_fee
 end
 
 class Zoo
   # 以下に回答を記載
+  def info_entry_fee
+    puts "#{:name}の入場料金は#{:entry_fee}円です。"
+  end
 
 end
 
