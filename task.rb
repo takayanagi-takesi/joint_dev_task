@@ -215,14 +215,13 @@ end
 
 class Item
   # 以下を修正して下さい
-
+  attr_reader :name
+ 
   def initialize(name: "ゼロ秒思考")
     @name = name
-  end
-  def name
      puts @name
   end
-
+  
 end
 
 def q19
@@ -233,23 +232,29 @@ end
 
 class UserQ20
   # 以下に回答を記載
+  attr_accessor :name, :age
   def initialize(**params)
     @name = params[:name]
     @age = params[:age]
+    @entry_fee = params[:entry_fee]
   end
-  
+
   entry_fee = case entry_fee
   when 0..5
+    @entry_fee[:infant]
   when 6..12
+     @entry_fee[:children]
   when 13..64
+     @entry_fee[:abult]
   when 65..120
+    @entry_fee[:senior]
   end
-entry_fee
+
 end
 
 class Zoo
   # 以下に回答を記載
-  def info_entry_fee
+  def info_entry_fee(user)
     puts "#{:name}の入場料金は#{:entry_fee}円です。"
   end
 
