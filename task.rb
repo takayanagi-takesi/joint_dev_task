@@ -187,7 +187,7 @@ def q17
 end
 
 
-require 'pry-byebug'
+
 class UserQ18
   # 以下に回答を記載
   def initialize(**params)
@@ -233,13 +233,13 @@ end
 class UserQ20
   # 以下に回答を記載
   attr_accessor :name, :age
-  def initialize(**params)
+  def initialize(params)
     @name = params[:name]
     @age = params[:age]
   end
 end
   
-
+require 'pry-byebug'
 class Zoo
   # 以下に回答を記載
     attr_accessor :name, :entry_fee
@@ -249,18 +249,15 @@ class Zoo
   end
 
   def info_entry_fee(user)
-    user[:entry_fee] = case entry_fee
+    case user @age
   when 0..5
-    @entry_fee[:infant]
+    puts "#{user[:name]}の入場料金は#{entry_fee[:infant]}円です。"
   when 6..12
-     @entry_fee[:children]
+    puts "#{user[:name]}の入場料金は#{entry_fee[:children]}円です。"
   when 13..64
-     @entry_fee[:abult]
+    puts "#{user[:name]}の入場料金は#{entry_fee[:abult]}円です。"
   when 65..120
-    @entry_fee[:senior]
-  end 
-  def info_entry_fee(user)
-    puts "#{user[:name]}の入場料金は#{user[:entry_fee]}円です。"
+    puts "#{user[:name]}の入場料金は#{entry_fee[:senior]}円です。"
   end
 end
 
