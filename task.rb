@@ -236,10 +236,20 @@ class UserQ20
   def initialize(**params)
     @name = params[:name]
     @age = params[:age]
-    @entry_fee = params[:entry_fee]
+  end
+end
+  
+
+class Zoo
+  # 以下に回答を記載
+    attr_accessor :name, :entry_fee
+  def initialize(**params)
+      @name = params[:name]
+      @entry_fee = params[:entry_fee]
   end
 
-  entry_fee = case entry_fee
+  def info_entry_fee(user)
+    user[:entry_fee] = case entry_fee
   when 0..5
     @entry_fee[:infant]
   when 6..12
@@ -248,17 +258,12 @@ class UserQ20
      @entry_fee[:abult]
   when 65..120
     @entry_fee[:senior]
-  end
-
-end
-
-class Zoo
-  # 以下に回答を記載
+  end 
   def info_entry_fee(user)
-    puts "#{:name}の入場料金は#{:entry_fee}円です。"
+    puts "#{user[:name]}の入場料金は#{user[:entry_fee]}円です。"
   end
-
 end
+
 
 
 def q20
@@ -275,4 +280,5 @@ def q20
   users.each do |user|
     zoo.info_entry_fee(user)
   end
+end
 end
