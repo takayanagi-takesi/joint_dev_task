@@ -219,7 +219,6 @@ class Item
  
   def initialize(name: "ゼロ秒思考")
     @name = name
-     puts @name
   end
   
 end
@@ -227,7 +226,7 @@ end
 def q19
   # ここは変更しないで下さい
   book = Item.new(name: "ゼロ秒思考")
-  book.name
+  puts book.name
 end
 
 class UserQ20
@@ -239,25 +238,24 @@ class UserQ20
   end
 end
   
-require 'pry-byebug'
+
 class Zoo
   # 以下に回答を記載
-    attr_accessor :name, :entry_fee
+    attr_accessor :entry_fee
   def initialize(**params)
-      @name = params[:name]
       @entry_fee = params[:entry_fee]
   end
 
   def info_entry_fee(user)
-    entry_fee = case user(@age)
+    entry_fee = case user.age
   when 0..5
-    puts "#{user[:name]}の入場料金は#{entry_fee[:infant]}円です。"
+    puts "#{user.name}の入場料金は#{entry_fee[:infant]}円です。"
   when 6..12
-    puts "#{user[:name]}の入場料金は#{entry_fee[:children]}円です。"
+    puts "#{user.name}の入場料金は#{entry_fee[:children]}円です。"
   when 13..64
-    puts "#{user[:name]}の入場料金は#{entry_fee[:abult]}円です。"
+    puts "#{user.name}の入場料金は#{entry_fee[:abult]}円です。"
   when 65..120
-    puts "#{user[:name]}の入場料金は#{entry_fee[:senior]}円です。"
+    puts "#{user.name}の入場料金は#{entry_fee[:senior]}円です。"
   end
 end
 end
